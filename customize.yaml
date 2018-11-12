@@ -1,0 +1,128 @@
+light.fibaro_system_fgd212_dimmer_2_level:
+  hidden: true
+light.fibaro_system_fgd212_dimmer_2_level_3:
+  hidden: true
+light.fibaro_system_fgd212_dimmer_2_level_2:
+  hidden: true
+sensor.fibaro_system_fgd212_dimmer_2_alarm_level:
+  hidden: true
+sensor.fibaro_system_fgd212_dimmer_2_alarm_level_2:
+  hidden: true
+sensor.fibaro_system_fgd212_dimmer_2_alarm_level_3:
+  hidden: true
+sensor.fibaro_system_fgd212_dimmer_2_alarm_type:
+  hidden: true
+sensor.fibaro_system_fgd212_dimmer_2_alarm_type_2:
+  hidden: true
+sensor.fibaro_system_fgd212_dimmer_2_alarm_type_3:
+  hidden: true
+sensor.fibaro_system_fgd212_dimmer_2_exporting:
+  hidden: true
+sensor.fibaro_system_fgd212_dimmer_2_exporting_2:
+  hidden: true
+sensor.fibaro_system_fgd212_dimmer_2_exporting_3:
+  hidden: true
+sensor.fibaro_system_fgd212_dimmer_2_heat:
+  hidden: true
+sensor.fibaro_system_fgd212_dimmer_2_heat_2:
+  hidden: true
+sensor.fibaro_system_fgd212_dimmer_2_heat_3:
+  hidden: true
+sensor.fibaro_system_fgd212_dimmer_2_power_management:
+  hidden: true
+sensor.fibaro_system_fgd212_dimmer_2_power_management_2:
+  hidden: true
+sensor.fibaro_system_fgd212_dimmer_2_power_management_3:
+  hidden: true
+sensor.fibaro_system_fgd212_dimmer_2_sourcenodeid:
+  hidden: true
+sensor.fibaro_system_fgd212_dimmer_2_sourcenodeid_2:
+  hidden: true
+sensor.fibaro_system_fgd212_dimmer_2_sourcenodeid_3:
+  hidden: true
+sensor.fibaro_system_fgd212_dimmer_2_system:
+  hidden: true
+sensor.fibaro_system_fgd212_dimmer_2_system_2:
+  hidden: true
+sensor.fibaro_system_fgd212_dimmer_2_system_3:
+  hidden: true
+sensor.fibaro_system_fgms001zw5_motion_sensor_alarm_level:
+  hidden: true
+sensor.fibaro_system_fgms001zw5_motion_sensor_alarm_type:
+  hidden: true
+sensor.fibaro_system_fgms001zw5_motion_sensor_direction:
+  hidden: true
+sensor.fibaro_system_fgms001zw5_motion_sensor_general:
+  hidden: true
+sensor.fibaro_system_fgms001zw5_motion_sensor_seismic_intensity:
+  hidden: true
+sensor.fibaro_system_fgms001zw5_motion_sensor_sourcenodeid:
+  hidden: true
+sensor.fibaro_system_fgwpef_wall_plug_gen5_alarm_level_2:
+  hidden: true
+sensor.fibaro_system_fgwpef_wall_plug_gen5_alarm_type_2:
+  hidden: true
+sensor.neo_coolcam_power_plug_12a_alarm_level:
+  hidden: true
+sensor.neo_coolcam_power_plug_12a_alarm_type:
+  hidden: true
+sensor.neo_coolcam_power_plug_12a_exporting:
+  hidden: true
+sensor.neo_coolcam_power_plug_12a_interval:
+  hidden: true
+sensor.neo_coolcam_power_plug_12a_interval_2:
+  hidden: true
+sensor.neo_coolcam_power_plug_12a_interval_3:
+  hidden: true
+sensor.neo_coolcam_power_plug_12a_interval_4:
+  hidden: true
+sensor.neo_coolcam_power_plug_12a_power_management:
+  hidden: true
+sensor.neo_coolcam_power_plug_12a_previous_reading:
+  hidden: true
+sensor.neo_coolcam_power_plug_12a_previous_reading_2:
+  hidden: true
+sensor.neo_coolcam_power_plug_12a_previous_reading_3:
+  hidden: true
+sensor.neo_coolcam_power_plug_12a_previous_reading_4:
+  hidden: true
+sensor.neo_coolcam_power_plug_12a_sourcenodeid:
+  hidden: true
+switch.unknown_node_3_switch:
+  hidden: true
+switch.doorbell1:
+  icon: mdi:bell-ring
+  assumed_state: false
+switch.doorbell2:
+  icon: mdi:bell-ring
+  assumed_state: false
+switch.kitchen_spotlights:
+  icon: mdi:lightbulb
+switch.hallway_light:
+  icon: mdi:lightbulb
+switch.switch:
+  icon: mdi:power-socket-eu
+switch.switch_3:
+  icon: mdi:power-socket-eu
+# Alarm clock sensors
+sensor.time:
+  hidden: true
+sensor.alarm_clock_hour:
+  hidden: true
+sensor.alarm_clock_minute:
+  hidden: true
+sensor.alarm_clock_time_long:
+  hidden: true
+sensor.alarm_clock_time:
+  friendly_name: 'Alarm Clock Setting'
+  icon: mdi:alarm
+# Alarm clock inputs
+input_number.alarm_clock_hour:
+  friendly_name: 'Hour'
+  icon: mdi:timer
+input_number.alarm_clock_minute:
+  friendly_name: 'Minute'
+  icon: mdi:timer
+input_boolean.alarm_clock_status:
+  friendly_name: 'Alarm Clock Status'
+  icon: mdi:alarm-check

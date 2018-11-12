@@ -1,0 +1,62 @@
+  - platform: yr
+    monitored_conditions:
+      - temperature
+      - symbol
+      - precipitation
+      - windSpeed
+      - pressure
+      - windDirection
+      - humidity
+      - fog
+      - cloudiness
+      - lowClouds
+      - mediumClouds
+      - highClouds
+      - dewpointTemperature
+  - platform: moon
+  - platform: waqi
+    token: 65596fd5d4b29180098a7297a0eada99501f6da4
+    locations:
+      - drammen
+      - oslo
+#    stations:
+#      - WAQI Nedre Storgate
+#      - Breivoll malestasjon
+  - platform: mqtt
+    name: "Kitchen Temperature"
+    state_topic: "tele/sonoffTH1/SENSOR"
+    value_template: "{{ value_json['AM2301'].Temperature }}"
+    unit_of_measurement: "°C"
+  - platform: mqtt
+    name: "Kitchen Humidity"
+    state_topic: "tele/sonoffTH1/SENSOR"
+    value_template: "{{ value_json['AM2301'].Humidity }}"
+    unit_of_measurement: "%"
+#  - platform: rfxtrx
+#    automatic_add: True
+  - platform: time_date
+    display_options:
+      - 'time'
+  - platform: template
+    sensors:
+      alarm_clock_hour:
+        value_template: '{{ states.input_number.alarm_clock_hour.state | int }}'
+      alarm_clock_minute:
+        value_template: '{{ states.input_number.alarm_clock_minute.state | int }}'
+      alarm_clock_time:
+        value_template: >-
+          {{ states.sensor.alarm_clock_hour.state }}:
+          {%- if states.sensor.alarm_clock_minute.state|length == 1 -%}
+            0
+          {%- endif -%}
+            {{ states.sensor.alarm_clock_minute.state }}
+      alarm_clock_time_long:
+        value_template: >-
+          {% if states.sensor.alarm_clock_hour.state|length == 1 -%}
+            0
+          {%- endif -%}
+            {{ states.sensor.alarm_clock_hour.state }}:
+          {%- if states.sensor.alarm_clock_minute.state|length == 1 -%}
+            0
+          {%- endif -%}
+            {{ states.sensor.alarm_clock_minute.state }}

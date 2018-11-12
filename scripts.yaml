@@ -1,0 +1,41 @@
+upstairsdoorbell:
+  alias: Upstairs Doorbell pressed
+  sequence:
+    - service: notify.LG_TV
+      data:
+        message: 'Upstairs doorbell is ringing!!!'
+        title: 'Home Assistant'
+    - service: switch.turn_on
+      data:
+        entity_id: switch.doorbell1
+    - service: notify.pushbullet
+      data:
+        title: "Send to one device"
+        message: "Upstairs doorbell is ringing!"
+#        target: device/DEVICE_NAME
+downstairsdoorbell:
+  alias: Downstairs Doorbell pressed
+  sequence:
+    - service: notify.LG_TV
+      data:
+        message: 'Downstairs doorbell is ringing!!!'
+        title: 'Home Assistant'
+    - service: switch.turn_on
+      data:
+        entity_id: switch.doorbell2
+    - service: notify.pushbullet
+      data:
+        title: "Send to one device"
+        message: "Downstairs doorbell is ringing!"
+wake_up:
+  sequence:
+    - service: switch.turn_on
+      data:
+        entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2
+#    - service: light.turn_on
+#      data: 
+#        entity_id: light.lux_lamp
+#        brightness: 255
+#        transition: 10
+#    - service: homeassistant.turn_off
+#      entity_id: switch.smart_switch1

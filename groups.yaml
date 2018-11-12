@@ -1,0 +1,161 @@
+Media:
+  name: Media
+  entities:
+    - switch.kitchen_stereo
+    - media_player.spotify
+    - media_player.marantz_sr7009
+    - media_player.lg_tv
+    - media_player.aikiocastaudio
+    - media_player.bedroom_tv
+    - media_player.livingroom_tv
+
+LivingRoom:
+  name: Living Room
+  entities:
+    - light.fibaro_system_fgd212_dimmer_2_level_6
+
+Kitchen:
+  name: Kitchen
+  entities:
+    - light.fibaro_system_fgd212_dimmer_2_level_4
+    - light.fibaro_system_fgd212_dimmer_2_level_5
+    - switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2
+    - switch.kitchen_spotlights
+    - sensor.kitchen_temperature
+    - sensor.kitchen_humidity
+
+Hallway:
+  name: Hallway
+  entities:
+    - switch.hallway_light
+    - switch.neo_coolcam_power_plug_12a_switch
+    - sensor.fibaro_system_fgms001zw5_motion_sensor_temperature
+#    - sensor.fibaro_system_fgms001zw5_motion_sensor_general
+    - sensor.fibaro_system_fgms001zw5_motion_sensor_burglar
+    - sensor.fibaro_system_fgms001zw5_motion_sensor_luminance
+
+Energy:
+  name: Energy
+  entities:
+    - sensor.fibaro_system_fgd212_dimmer_2_energy
+    - sensor.fibaro_system_fgd212_dimmer_2_energy_2
+    - sensor.fibaro_system_fgd212_dimmer_2_energy_3
+    - sensor.fibaro_system_fgwpef_wall_plug_gen5_energy
+    - sensor.neo_coolcam_power_plug_12a_energy
+
+Power:
+  name: Used Power
+  entities:
+    - sensor.fibaro_system_fgd212_dimmer_2_power_4
+    - sensor.fibaro_system_fgd212_dimmer_2_power_5
+    - sensor.fibaro_system_fgwpef_wall_plug_gen5_power
+    - sensor.fibaro_system_fgd212_dimmer_2_power_6
+    - sensor.neo_coolcam_power_plug_12a_power
+    - sensor.neo_coolcam_power_plug_12a_voltage
+
+AirQuality:
+  name: World Air Quality
+  entities:
+    - sensor.waqi_akebergveien_oslo_norway
+    - sensor.waqi_alnabru_oslo_norway
+    - sensor.waqi_bangelokka_drammen_norway
+    - sensor.waqi_breivoll_malestasjon_oslo_norway
+    - sensor.waqi_bygdoy_alle_oslo_norway
+    - sensor.waqi_hjortnes_oslo_norway
+    - sensor.waqi_kirkeveien_oslo_norway
+    - sensor.waqi_manglerud_oslo_norway
+    - sensor.waqi_nedre_storgate_drammen_norway
+    - sensor.waqi_rv_4_aker_sykehus_oslo_norway
+    - sensor.waqi_skoyen_oslo_norway
+    - sensor.waqi_smestad_oslo_norway
+    - sensor.waqi_sofienbergparken_oslo_norway
+
+Doorbell:
+  name: Doorbell
+  entities:
+    - switch.doorbell1
+    - switch.doorbell2
+    
+Automation: 
+  name: Automations
+  entities: 
+    - automation.kettle_on_in_the_morning
+    - automation.hallway_light_on
+    - automation.hallway_light_off
+    - automation.kitchen_spotlights_on
+    - automation.kitchen_spotlights_off
+    - automation.doorbell_1_off
+    - automation.doorbell_1_pressed
+    - automation.doorbell_2_off
+    - automation.doorbell_2_pressed
+
+# Alarm clock
+alarm_clock:
+  name: 'Alarm Clock'
+  entities:
+    - sensor.alarm_clock_time
+    - input_number.alarm_clock_hour
+    - input_number.alarm_clock_minute
+    - input_boolean.alarm_clock_status
+
+#views
+default_view: 
+  view: yes
+  entities:
+    - group.alarm_clock
+    - group.livingroom
+    - group.kitchen
+    - group.hallway
+    - group.power
+    - sensor.yr_symbol
+    - sun.sun
+    - sensor.moon
+
+MediaView:
+  view: yes
+  name: Media
+  entities:
+    - group.media
+
+#LivingRoomView:
+#  view: yes
+#  name: Living Room
+#  entities:
+#    - group.livingroom
+#
+#KitchenView:
+#  view: yes
+#  name: Kitchen
+#  entities:
+#    - group.kitchen
+#
+AutomationView:
+  view: yes
+  name: Automations
+  entities:
+    - group.automation
+
+EnergyView:
+  view: yes
+  name: Energy
+  entities:
+    - group.energy
+
+PowerView:
+  view: yes
+  name: Power
+  entities:
+    - group.power
+
+AirQualityView:
+  view: yes
+  name: WAQI
+  entities:
+    - group.airquality
+
+DoorbellView:
+  view: yes
+  name: Doorbell
+  entities:
+    - group.doorbell
+

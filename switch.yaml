@@ -1,0 +1,34 @@
+  - platform: mqtt
+    name: "Kitchen SpotLights"
+    command_topic: "cmnd/sonoffbasic1/power"
+    state_topic: "stat/sonoffbasic1/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+  - platform: mqtt
+    name: "Kitchen Stereo"
+    command_topic: "cmnd/sonoffTH1/power"
+    state_topic: "stat/sonoffTH1/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+  - platform: mqtt
+    name: "Hallway Light"
+    command_topic: "cmnd/sonoffbasic2/power"
+    state_topic: "stat/sonoffbasic2/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+  - platform: rfxtrx
+#    automatic_add: True
+    devices:
+      0b11000101a691a601040f70:
+        name: 'Doorbell1'
+        fire_event: True
+      0b1100000194dde201040f60:
+        name: 'Doorbell2'
+        fire_event: True
+

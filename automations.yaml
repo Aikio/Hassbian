@@ -1,0 +1,112 @@
+- id: KitchenSpotlightsOn
+  alias: Kitchen Spotlights on
+  trigger:
+    platform: state
+    entity_id: light.fibaro_system_fgd212_dimmer_2_level_5
+    to: 'on'
+  action:
+    service: switch.turn_on
+    entity_id:
+    - switch.kitchen_spotlights
+- id: KitchenSpotlightsOff
+  alias: Kitchen Spotlights off
+  trigger:
+    platform: state
+    entity_id: light.fibaro_system_fgd212_dimmer_2_level_5
+    to: 'off'
+  action:
+    service: switch.turn_off
+    entity_id:
+    - switch.kitchen_spotlights
+- id: HallwayMotionOn
+  alias: Hallway light on
+  trigger:
+    entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_burglar
+    platform: state
+    to: '8'
+  condition:
+    condition: numeric_state
+    entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_luminance
+    below: '100'
+#    value_template: '{{ sensor.fibaro_system_fgms001zw5_motion_sensor_luminance > 100 }}'
+  action:
+    service: switch.turn_on
+    entity_id: 
+    - switch.hallway_light
+- id: HallwayMotionOff
+  alias: Hallway light off
+  trigger:
+    platform: state
+    entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_burglar
+    to: '0'
+    for:
+      minutes: 1
+  action:
+    service: switch.turn_off
+    entity_id:
+    - switch.hallway_light
+- id: Doorbell1Off
+  alias: Doorbell 1 off
+  trigger:
+    platform: state
+    entity_id: switch.doorbell1
+    to: 'on'
+    for:
+      seconds: 10
+  action:
+    service: switch.turn_off
+    entity_id:
+    - switch.doorbell1
+- id: Doorbell2Off
+  alias: Doorbell 2 off
+  trigger:
+    platform: state
+    entity_id: switch.doorbell2
+    to: 'on'
+    for:
+      seconds: 10
+  action:
+    service: switch.turn_off
+    entity_id:
+    - switch.doorbell2
+- id: Doorbell1Pressed
+  alias: Doorbell 1 pressed
+  trigger:
+    platform: event
+    event_type: button_pressed
+    event_data:
+      entity_id: switch.doorbell1
+  action:
+    service: script.turn_on
+    entity_id: script.downstairsdoorbell
+- id: Doorbell2Pressed
+  alias: Doorbell 2 pressed
+  trigger:
+    platform: event
+    event_type: button_pressed
+    event_data:
+      entity_id: switch.doorbell2
+  action:
+    service: script.turn_on
+    entity_id: script.upstairsdoorbell
+#- id: KettleOn
+#  alias: Kettle on in the morning
+#  trigger:
+#    platform: time
+#    at: '08:05:00'
+#  action:
+#    service: switch.turn_on
+#    entity_id:
+#    - switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2
+- id: AlarmOn
+  alias: 'Kettle on with alarm'
+  hide_entity: False
+  trigger:
+    platform: template
+    value_template: '{{ states.sensor.time.state == states.sensor.alarm_clock_time_long.state }}'
+  condition:
+    condition: state
+    entity_id: input_boolean.alarm_clock_status
+    state: 'on'
+  action:
+    service: script.wake_up
