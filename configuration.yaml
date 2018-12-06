@@ -14,7 +14,7 @@ homeassistant:
   customize: !include customize.yaml
 
 # Show links to resources in log and frontend
-introduction:
+#introduction:
 
 # Enables the frontend
 frontend:
@@ -39,10 +39,10 @@ updater:
   # include_used_components: true
 
 # Discover some devices automatically
-discovery:
+#discovery:
 
 # Allows you to issue voice commands from the frontend in enabled browsers
-conversation:
+#conversation:
 
 # Enables support for tracking state changes over time
 history:
@@ -51,23 +51,23 @@ history:
 logbook:
 
 # Enables a map showing the location of tracked devices
-map:
+#map:
 
 # Track the sun
 sun:
 
 # Text to speech
-tts:
-  - platform: google
+#tts:
+#  - platform: google
 
 # Cloud
 #cloud:
 
-panel_iframe: 
-  configurator:
-    title: "Configurator"
-    icon: mdi:wrench
-    url: https://hassbian.local:3218/    
+#panel_iframe: 
+#  configurator:
+#    title: "Configurator"
+#    icon: mdi:wrench
+#    url: https://hassbian.local:3218/    
 
 rfxtrx:
     device: /dev/ttyUSB0
@@ -105,6 +105,7 @@ media_player:
         - hdmi2
   - platform: denonavr
     name: Receiver
+    host: 192.168.0.91
   - platform: spotify
     client_id: 4f2c6f72c61e4204baeb3700c5fdec98
     client_secret: bcbd331316874e02b0d8ae4f4eff490f

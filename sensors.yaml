@@ -3,22 +3,22 @@
       - temperature
       - symbol
       - precipitation
-      - windSpeed
-      - pressure
-      - windDirection
-      - humidity
+#      - windSpeed
+#      - pressure
+#      - windDirection
+#      - humidity
       - fog
       - cloudiness
-      - lowClouds
-      - mediumClouds
-      - highClouds
+#      - lowClouds
+#      - mediumClouds
+#      - highClouds
       - dewpointTemperature
   - platform: moon
   - platform: waqi
     token: 65596fd5d4b29180098a7297a0eada99501f6da4
     locations:
       - drammen
-      - oslo
+#      - oslo
 #    stations:
 #      - WAQI Nedre Storgate
 #      - Breivoll malestasjon
@@ -60,3 +60,11 @@
             0
           {%- endif -%}
             {{ states.sensor.alarm_clock_minute.state }}
+  - platform: systemmonitor
+    resources:
+      - type: disk_free
+        arg: /
+      - type: memory_free
+      - type: memory_use_percent
+      - type: processor_use
+      - type: last_boot

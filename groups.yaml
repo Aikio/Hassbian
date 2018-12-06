@@ -53,22 +53,22 @@ Power:
     - sensor.neo_coolcam_power_plug_12a_power
     - sensor.neo_coolcam_power_plug_12a_voltage
 
-AirQuality:
-  name: World Air Quality
-  entities:
-    - sensor.waqi_akebergveien_oslo_norway
-    - sensor.waqi_alnabru_oslo_norway
-    - sensor.waqi_bangelokka_drammen_norway
-    - sensor.waqi_breivoll_malestasjon_oslo_norway
-    - sensor.waqi_bygdoy_alle_oslo_norway
-    - sensor.waqi_hjortnes_oslo_norway
-    - sensor.waqi_kirkeveien_oslo_norway
-    - sensor.waqi_manglerud_oslo_norway
-    - sensor.waqi_nedre_storgate_drammen_norway
-    - sensor.waqi_rv_4_aker_sykehus_oslo_norway
-    - sensor.waqi_skoyen_oslo_norway
-    - sensor.waqi_smestad_oslo_norway
-    - sensor.waqi_sofienbergparken_oslo_norway
+#AirQuality:
+#  name: World Air Quality
+#  entities:
+#    - sensor.waqi_akebergveien_oslo_norway
+#    - sensor.waqi_alnabru_oslo_norway
+#    - sensor.waqi_bangelokka_drammen_norway
+#    - sensor.waqi_breivoll_malestasjon_oslo_norway
+#    - sensor.waqi_bygdoy_alle_oslo_norway
+#    - sensor.waqi_hjortnes_oslo_norway
+#    - sensor.waqi_kirkeveien_oslo_norway
+#    - sensor.waqi_manglerud_oslo_norway
+#    - sensor.waqi_nedre_storgate_drammen_norway
+#    - sensor.waqi_rv_4_aker_sykehus_oslo_norway
+#    - sensor.waqi_skoyen_oslo_norway
+#    - sensor.waqi_smestad_oslo_norway
+#    - sensor.waqi_sofienbergparken_oslo_norway
 
 Doorbell:
   name: Doorbell
@@ -89,6 +89,21 @@ Automation:
     - automation.doorbell_2_off
     - automation.doorbell_2_pressed
 
+SystemMonitor:
+  name: System Monitor
+  entities:
+    - sensor.disk_free_
+    - sensor.last_boot
+    - sensor.memory_free
+    - sensor.memory_use_percent
+    - sensor.processor_use
+
+Bathroom:
+  name: Bathroom
+  entities:
+    - sensor.heiman_temperature_humidity_sensor_hs1htz_temperature
+    - sensor.heiman_temperature_humidity_sensor_hs1htz_relative_humidity
+
 # Alarm clock
 alarm_clock:
   name: 'Alarm Clock'
@@ -106,7 +121,9 @@ default_view:
     - group.livingroom
     - group.kitchen
     - group.hallway
+    - group.bathroom
     - group.power
+    - group.systemmonitor
     - sensor.yr_symbol
     - sun.sun
     - sensor.moon
@@ -147,11 +164,11 @@ PowerView:
   entities:
     - group.power
 
-AirQualityView:
-  view: yes
-  name: WAQI
-  entities:
-    - group.airquality
+#AirQualityView:
+#  view: yes
+#  name: WAQI
+#  entities:
+#    - group.airquality
 
 DoorbellView:
   view: yes
